@@ -168,6 +168,28 @@
 			};
 
 			/**
+			 * Returns next available position
+			 *
+			 * @param {Object} item The item to insert
+			 */
+			this.getNextAvailable = function(item) {
+				// walk through each row and column looking for a place it will fit
+				for (var rowIndex = 0; rowIndex < this.maxRows; ++rowIndex) {
+					for (var colIndex = 0; colIndex < this.columns; ++colIndex) {
+						// only insert if position is not already taken and it can fit
+						var items = this.getItems(rowIndex, colIndex, item.sizeX, item.sizeY, item);
+						if (items.length === 0 && this.canItemOccupy(item, rowIndex, colIndex)) {
+							return {
+								row: rowIndex,
+								col: colIndex
+							};
+						}
+					}
+				}
+				throw new Error('Unable to place item!');
+			};
+
+			/**
 			 * Gets items at a specific coordinate
 			 *
 			 * @param {Number} row
