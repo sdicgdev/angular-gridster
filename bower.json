@@ -1,6 +1,6 @@
 {
 	"name": "adi-angular-gridster",
-	"version": "0.0.1",
+	"version": "0.13.6",
 	"main": ["src/angular-gridster.js", "dist/angular-gridster.min.css"],
 	"dependencies": {
 		"angular": ">= 1.2.0",
@@ -12,17 +12,5 @@
 		"jquery": "*",
 		"jquery-simulate": "*"
 	},
-	"ignore": [
-		"test",
-		".bowerrc",
-		".editorconfig",
-		".gitattributes",
-		".gitignore",
-		".jshintrc",
-		".travis.yml",
-		"Gruntfile.js",
-		"karma.conf.js",
-		"ptor.conf.js",
-		"package.json"
-	]
+	"ignore": []
 }
